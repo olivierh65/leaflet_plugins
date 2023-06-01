@@ -1,0 +1,16 @@
+leaflet-geoman:
+  version: 1.0
+  js:
+    js/leaflet-geoman.min.js: {}
+  css:
+    component:
+      js/leaflet-geoman.css: {}
+  dependencies:
+    - leaflet/leaflet
+
+leaflet-geoman-drupal:
+  version: VERSION
+  js:
+    leaflet_geoman.drupal.js: {}
+  dependencies:
+    - leaflet/leaflet-drupal

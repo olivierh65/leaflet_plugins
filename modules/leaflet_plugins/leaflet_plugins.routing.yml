@@ -1,0 +1,7 @@
+leaflet_plugins.settings:
+  path: '/admin/config/system/leaflet-plugins'
+  defaults:
+    _form: '\Drupal\leaflet_plugins\Form\SettingsForm'
+    _title: 'Leaflet Plugins'
+  requirements:
+    _permission: 'administer site configuration'

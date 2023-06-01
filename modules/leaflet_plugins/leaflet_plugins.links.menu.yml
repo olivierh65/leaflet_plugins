@@ -1,0 +1,6 @@
+leaflet_plugins.settings:
+  title: 'Leaflet Plugins'
+  description: 'Configure plugins for Leaflet'
+  route_name: leaflet_plugins.settings
+  weight: 15
+  parent: system.admin_config_system

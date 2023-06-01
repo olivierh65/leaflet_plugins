@@ -1,0 +1,16 @@
+leaflet-locatecontrol:
+  version: 1.0
+  js:
+    js/dist/L.Control.Locate.min.js: {}
+  css:
+    component:
+      js/dist/L.Control.Locate.min.css: {}
+  dependencies:
+    - leaflet/leaflet
+
+leaflet-locatecontrol-drupal:
+  version: VERSION
+  js:
+    leaflet_locatecontrol.drupal.js: {}
+  dependencies:
+    - leaflet/leaflet-drupal

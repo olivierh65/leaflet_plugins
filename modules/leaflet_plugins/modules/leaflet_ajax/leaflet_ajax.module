@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Preprocess function for leaflet_ajax.
+ */
+function leaflet_ajax_preprocess_leaflet_map(array &$variables) {
+
+  $config = \Drupal::config('leaflet_plugins.settings');
+
+  // add the cache tag, so that the output gets invalidated when the config is saved
+  \Drupal::service('renderer')->addCacheableDependency($variables, $config);
+  
+  $variables['#attached']['library'][] = 'leaflet_ajax/leaflet-ajax';
+  $variables['#attached']['library'][] = 'leaflet_ajax/leaflet-ajax-drupal';
+
+  $variables['#attached']['drupalSettings']['leaflet_plugins']['ajax']['control'] = $config->get('ajax_control') ?? false;
+}
+

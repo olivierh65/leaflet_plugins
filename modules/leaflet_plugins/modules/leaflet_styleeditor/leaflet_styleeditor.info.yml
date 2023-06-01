@@ -1,0 +1,7 @@
+name: Leaflet Style Editor
+description: Extends Leaflet with Style Editor.
+core_version_requirement: ^8.8 || ^9
+type: module
+package: Geofield
+dependencies:
+  - leaflet:leaflet_plugins

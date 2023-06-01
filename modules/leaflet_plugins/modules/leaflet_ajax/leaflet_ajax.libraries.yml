@@ -1,0 +1,13 @@
+leaflet-ajax:
+  version: 1.0
+  js:
+    js/dist/leaflet.ajax.min.js: {}
+  dependencies:
+    - leaflet/leaflet
+
+leaflet-ajax-drupal:
+  version: VERSION
+  js:
+    leaflet_ajax.drupal.js: {}
+  dependencies:
+    - leaflet/leaflet-drupal

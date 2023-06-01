@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * Preprocess function for leaflet_feature_control.
+ */
+function leaflet_feature_control_preprocess_leaflet_map(array &$variables) {
+
+  $config = \Drupal::config('leaflet_plugins.settings');
+
+  // add the cache tag, so that the output gets invalidated when the config is saved
+  \Drupal::service('renderer')->addCacheableDependency($variables, $config);
+  
+  $variables['#attached']['library'][] = 'leaflet_feature_control/leaflet-feature-control';
+  $variables['#attached']['library'][] = 'leaflet_feature_control/leaflet-feature-control-drupal';
+
+  $variables['#attached']['drupalSettings']['leaflet_plugins']['feature_control']['control'] = $config->get('feature_control_control') ?? false;
+  $variables['#attached']['drupalSettings']['leaflet_plugins']['feature_control']['position'] = $config->get('feature_control_position') ?? 'topright';
+
+}

@@ -1,0 +1,8 @@
+leaflet-doubleclick-drupal:
+  version: VERSION
+  js:
+    leaflet_doubleclick.drupal.js: {}
+  dependencies:
+    - leaflet/leaflet-drupal
+
+

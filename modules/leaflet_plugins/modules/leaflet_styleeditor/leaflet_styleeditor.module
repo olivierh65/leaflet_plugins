@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Preprocess function for leaflet_styleeditor.
+ */
+function leaflet_styleeditor_preprocess_leaflet_map(array &$variables) {
+  $config = \Drupal::config('leaflet_plugins.settings');
+
+  // add the cache tag, so that the output gets invalidated when the config is saved
+  \Drupal::service('renderer')->addCacheableDependency($variables, $config);
+  
+  $variables['#attached']['library'][] = 'leaflet_styleeditor/leaflet-styleeditor';
+  $variables['#attached']['library'][] = 'leaflet_styleeditor/leaflet-styleeditor-drupal';
+
+  $variables['#attached']['drupalSettings']['leaflet_plugins']['styleeditor']['control'] = $config->get('styleeditor_control') ?? false;
+  $variables['#attached']['drupalSettings']['leaflet_plugins']['styleeditor']['position'] = $config->get('styleeditor_position') ?? 'bottomright';
+}
+

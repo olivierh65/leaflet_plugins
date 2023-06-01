@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * Preprocess function for leaflet_doubleclick.
+ */
+function leaflet_doubleclick_preprocess_leaflet_map(array &$variables) {
+  $variables['#attached']['library'][] = 'leaflet_doubleclick/leaflet-doubleclick-drupal';
+}
+

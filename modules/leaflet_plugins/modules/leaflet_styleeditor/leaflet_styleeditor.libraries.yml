@@ -1,0 +1,16 @@
+leaflet-styleeditor:
+  version: 1.0
+  js:
+    js/dist/javascript/Leaflet.StyleEditor.min.js: {}
+  css:
+    component:
+      js/dist/css/Leaflet.StyleEditor.min.css: {}
+  dependencies:
+    - leaflet/leaflet
+
+leaflet-styleeditor-drupal:
+  version: VERSION
+  js:
+    leaflet_styleeditor.drupal.js: {}
+  dependencies:
+    - leaflet/leaflet-drupal

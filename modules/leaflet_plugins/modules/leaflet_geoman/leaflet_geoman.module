@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * Preprocess function for leaflet_geoman.
+ */
+function leaflet_geoman_preprocess_leaflet_map(array &$variables) {
+
+  $config = \Drupal::config('leaflet_plugins.settings');
+
+  // add the cache tag, so that the output gets invalidated when the config is saved
+  \Drupal::service('renderer')->addCacheableDependency($variables, $config);
+
+  $variables['#attached']['library'][] = 'leaflet_geoman/leaflet-geoman';
+  $variables['#attached']['library'][] = 'leaflet_geoman/leaflet-geoman-drupal';
+
+  
+  $variables['#attached']['drupalSettings']['leaflet_plugins']['geoman']['control'] = $config->get('geoman_control') ?? false;
+  $variables['#attached']['drupalSettings']['leaflet_plugins']['geoman']['position'] = $config->get('geoman_position') ?? 'topleft';
+  $variables['#attached']['drupalSettings']['leaflet_plugins']['geoman']['options'] = $config->get('geoman_options') ?? 
+        ['drawmarker', 'drawpolyline', 'drawpolygon', 
+        'editmode', 'dragmode', 'cutpolygon', 'removalmode', 'drawcontrols', 'editcontrols', 'customcontrols' ];
+
+}
+

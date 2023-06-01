@@ -1,0 +1,7 @@
+name: Leaflet Feature Control
+description: Extends Leaflet with a Control to show/hide features.
+core_version_requirement: ^8.8 || ^9
+type: module
+package: Geofield
+dependencies:
+  - leaflet:leaflet_plugins
