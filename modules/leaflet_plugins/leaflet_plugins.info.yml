@@ -2,7 +2,7 @@ name: Leaflet Plugins
 type: module
 description: Adds plugins to Leaflet.
 package: Geofield
-core_version_requirement: ^8.8 || ^9
+core_version_requirement: ^8.8 || ^9 || ^10
 configure: admin/config/system/leaflet-plugins
 dependencies:
   - leaflet:leaflet
