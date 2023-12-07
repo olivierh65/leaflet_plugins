@@ -32,8 +32,8 @@
         if (drupalSettings.leaflet_plugins.feature_control.control == 2) {
         // addOverlay Appearance plugin set layer to unmodiable if a second argument is passed
         // Layer label should be in option name
-        if (!lFeature.options.name) {
-            lFeature.options.name = feature.popup.trim();
+        if (!lFeature.options.name && feature.popup) {
+            lFeature.options.name = feature.popup.value.trim();
         } else {
             lFeature.options.name = "track";
         }
