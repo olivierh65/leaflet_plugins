@@ -41,9 +41,8 @@
             self.track_control.addOverlay(lFeature);
         }
         } else {
-        if (self.track_control) {
-            self.track_control.addOverlay(lFeature,
-                feature.popup.value.trim());
+        if  (self.track_control && feature.popup) {
+            self.track_control.addOverlay(lFeature,feature.popup.value.trim());
         }
         }
     });
